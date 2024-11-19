@@ -1,22 +1,9 @@
-# Streamlit for the web app
-streamlit==1.40.1
-
-# Data manipulation and analysis
-pandas==2.2.3
-numpy==2.1.3
-
-# Data visualization
-altair==5.4.1
-
-# Web scraping (BeautifulSoup and requests)
-beautifulsoup4==4.12.2
-requests==2.32.3
-
-# Time zone data
-tzdata==2024.2
-
-# For handling chart aesthetics
-matplotlib==3.8.0
-
-# Optional: If your app uses advanced data types (e.g., Arrow)
+streamlit
+pandas
+numpy
+altair
+beautifulsoup4
+requests
+tzdata
+matplotlib
 pyarrow
