@@ -15,7 +15,7 @@ How to Access the App 🌐
 
 The app is hosted on Streamlit Cloud. You can access it directly via the link below:
 
-👉 [**Launch the App**]([https://your-streamlit-app-url](https://grocery-basket-co2-emissions-gwnjacdkmavcl8futtgc5s.streamlit.app])) 👈
+👉 [**Launch the App**](https://grocery-basket-co2-emissions-gwnjacdkmavcl8futtgc5s.streamlit.app) 👈
 
 Data Source 📊
 
