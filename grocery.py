@@ -335,16 +335,30 @@ elif page_navigation == "See your trends over time":
 
                     # Display basket-wise metrics table
                     st.subheader("Average CO2e per Basket Over Time")
-                    line_chart = alt.Chart(basket_wise_metrics).mark_line(point=True).encode(
+                    base_line_chart = alt.Chart(basket_wise_metrics).mark_line(point=True).encode(
                         x=alt.X("Date of Purchase:T", title="Date of Purchase"),
                         y=alt.Y("avg_co2e:Q", title="Avg. CO2e of Basket"),
                         tooltip=["Date of Purchase:T", "avg_co2e:Q"]
-                    ).properties(
+                    )
+
+                    # Trend line
+                    trend_line = alt.Chart(basket_wise_metrics).mark_line(color="red").transform_regression(
+                        "Date of Purchase",
+                        "avg_co2e",
+                        method="linear"
+                    ).encode(
+                        x=alt.X("Date of Purchase:T"),
+                        y=alt.Y("avg_co2e:Q")
+                    )
+
+                    # Combine line chart and trend line
+                    combined_chart = (base_line_chart + trend_line).properties(
                         title="Trend of CO2e Over Time",
-                        width=800, 
+                        width=800,
                         height=600
                     )
-                    st.altair_chart(line_chart, use_container_width=True)
+
+                    st.altair_chart(combined_chart, use_container_width=True)
 
                     st.subheader("Total CO2e Contribution by Category (as Percentages)")
                     category_emissions = (
